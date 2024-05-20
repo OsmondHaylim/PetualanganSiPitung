@@ -1,0 +1,10 @@
+Pasukan"Keluarlah dari rumah tersebut, Pitung! Kami tahu kamu ada di sana!"
+Pitung"Berani sekali kalian mencoba menyerangku kembali setelah kuhajar tadi pagi! Perlukah aku menghajar kalian lagi?"
+Pasukan"Kami sudah tau rahasia dari kesaktianmu itu, Pitung! Kami bahkan sudah mengambil jimatmu itu! Tamatlah kau sekarang."
+Pitung"Kurang ajar kalian! Kalian kira aku akan takut karena kalian mengambil jimatku? Majulah kalian semua!" 
+Narator"Pasukan-pasukan tersebut kemudian menyerang Pitung. Walaupun Pitung masih dapat melawan beberapa orang, tetapi Pitung pun akhirnya terjatuh dikalahkan oleh pasukan tersebut."
+Pasukan"Hahaha! Kau tidak seharusnya melawan kami!"
+Narator"Pasukan tersebut kemudian membawa Pitung ke markas mereka. Salah satu dari pasukan tersebut menemukan anak yang bersembunyi di semak-semak"
+Pasukan"Siapa kamu? Kamu pasti adalah teman Si Pitung. Mati kau!"
+Narator"Setelah melihat pasukan tersebut menyerangnya, anak tersebut kemudian terbangun dari mimpinya. Anak tersebut akan selalu mengingat mimpi yang dia rasakan"
+Load(Menu)

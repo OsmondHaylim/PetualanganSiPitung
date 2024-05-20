@@ -1,0 +1,8 @@
+Narator"Setelah beberapa lama menyusuri padang rumput dan hutan, anak ini pun menemukan sebuah pasar bernama Tanah Abang.{c} Pasar itu sedang ramai-ramainya, sehingga ia bersembunyi di belakang sebuah pohon untuk melihat apa yang terjadi.{c} Rupanya, keramaian tersebut terjadi karena 3 orang laki-laki.{c} Salah satu orang yang bertarung menggunakan baju sadariah bewarna merah.{c} Satu orang lainnya yang sedang tergeletak di tanah menggunakan seragam serba cokelat.{c} Satu orang dibelakangnya menggunakan pakaian serba mewah, seperti seorang bangsawan."
+ShowCharacters()
+Pitung"Aku adalah si Jago di Tanah Abang ini!{a} Kau seharusnya mengaku kalah dan memberikan hartamu sebelum aku mengalahkan orang yang kamu bawa itu."
+Haji Sapiudin"Tidak mungkin!{a} Hey, bagaimana kamu bisa kalah dengan orang itu?{a} Aku kira pasukan Heyne seharusnya dapat melindungiku dari perampok seperti dia!"
+Pasukan"Ugh, maaf! Dia terlalu kuat!"
+Pitung"Hahaha. Aku sudah mendapatkan harta yang kuincar. Sekarang waktunya kabur!"
+Narator"Si Pitung pun kemudian berlari meninggalkan pasar tersebut.{c} Anak yang bersembunyi di belakang pohon tersebut ingin mengikuti si Pitung,{a} tetapi si Pitung terlalu cepat untuk dikejar."HideCharacter()
+Load(Menu)

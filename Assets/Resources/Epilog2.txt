@@ -1,0 +1,11 @@
+Narator"Setelah beberapa lama menyusuri padang rumput dan hutan, anak ini pun menemukan sebuah masjid.{c} Di dalam Masjid itu terdapat dua orang, yaitu Si Pitung dengan seseorang petugas dalam masjid tersebut."
+Petugas"Kamu yakin ingin menyumbangkan harta sebanyak ini untuk masyarakat miskin?"
+Pitung"Iya pak!"
+Petugas"Wah, kamu sangat dermawan! Walaupun begitu, bagaimana kamu bisa mendapatkan harta sebanyak ini?"
+Pitung"Ohhh, saya hanya bekerja lebih keras dari orang lain saja."
+Petugas"Jangan bilang kamu ada hubungannya dengan orang yang baru dirampas di pasar itu?"
+Narator"Si Pitung pun terdiam."
+Petugas"Pitung, saya tahu niatmu baik, tetapi kamu tidak boleh melakukan hal-hal tersebut untuk melakukan niat baikmu itu."
+Pitung"Walaupun begitu, uang itu akan disayangkan di tangan mereka, karena hanya akan dihamburkan saja.{c} Kalau saya mempunyai kemampuan yang baik, saya akan menggunakannya untuk orang-orang miskin."
+Narator"Pitung kemudian berlari menjauh dari masjid, sangat cepat sehingga anak yang mengikutinya tidak dapat mengejarnya"
+Load(Menu)

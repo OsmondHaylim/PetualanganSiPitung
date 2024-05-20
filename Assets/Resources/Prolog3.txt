@@ -1,0 +1,4 @@
+Narator"Setelah beberapa lama berlari ke arah pitung berlari, anak kecil tersebut pun kelelahan.{c} Ia pun menemukan sebuah rumah, lalu berjalan menuju rumah tersebut untuk berteduh.{c} Beberapa saat kemudian, suara geraman yang kencang terdengar dari rumah tersebut."
+Pitung"SIAPA YANG BERANI MENCURI JIMATKU? Aku sudah susah-susah menyembunyikannya di tempat yang hanya guruku yang tahu!"
+Narator"Anak itu kemudian melihat beberapa tentara Belanda yang datang menuju tempatnya.{c} Anak tersebut kemudian mencari tempat untuk menyembunyikan diri."
+Start(Level3)
