@@ -7,16 +7,14 @@ namespace DIALOGUE{
     {
         public string speaker;
         public DialogueData dialogue;
-        public CommandData commands;
-
+        public string commands;
         public bool hasSpeaker => speaker != string.Empty;
         public bool hasDialogue => dialogue != null;
-        public bool hasCommand => commands != null;
-
+        public bool hasCommand => commands != string.Empty;
         public DialogueLine(string speaker, string dialogue, string commands){
             this.speaker = speaker;
             this.dialogue = (string.IsNullOrWhiteSpace(dialogue) ? null : new DialogueData(dialogue));
-            this.commands = (string.IsNullOrWhiteSpace(commands) ? null : new CommandData(commands));
+            this.commands = commands;
         }
     }
 }

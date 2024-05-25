@@ -10,7 +10,6 @@ namespace DIALOGUE{
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 PromptAdvance();
         }
-
         public void PromptAdvance(){
             DialogueSystem.instance.OnUserPrompt_Next();
         }
