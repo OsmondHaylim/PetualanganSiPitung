@@ -8,4 +8,3 @@ Narator"Si Pitung pun terdiam."
 Petugas"Pitung, saya tahu niatmu baik, tetapi kamu tidak boleh melakukan hal-hal tersebut untuk melakukan niat baikmu itu."
 Pitung"Walaupun begitu, uang itu akan disayangkan di tangan mereka, karena hanya akan dihamburkan saja.{c} Kalau saya mempunyai kemampuan yang baik, saya akan menggunakannya untuk orang-orang miskin."
 Narator"Pitung kemudian berlari menjauh dari masjid, sangat cepat sehingga anak yang mengikutinya tidak dapat mengejarnya"
-Load(Menu)

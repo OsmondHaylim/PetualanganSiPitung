@@ -1,2 +1,1 @@
 Narator"Setelah beberapa lama berlari ke arah pitung berlari,{a} Ia menemukan dirinya di sebuah padang rumput yang berbeda dari sebelumnya.{c} Anak ini pun kemudian terbangun.{a} Ia lalu melihat sekelilingnya sambil merasa bingung.{c} Anak ini kemudian memulai melihat sebuah jalan,{a} dan mengikuti jalan tersebut, dengan harapan dapat menemukan Si Pitung kembali."
-Start(Level2)

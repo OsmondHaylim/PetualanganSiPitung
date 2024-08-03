@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using UnityEngine;
 
 namespace DIALOGUE{
     public class ConversationManager{
+        public string sceneToLoad; 
         private DialogueSystem dialogueSystem => DialogueSystem.instance;
         private Coroutine process = null;
         public bool isRunning => process != null;
@@ -17,9 +19,9 @@ namespace DIALOGUE{
         private void OnUserPrompt_Next(){
             userPrompt = true;
         }
-        public void StartConversation(List<string> conversation){
+        public void StartConversation(List<string> conversation, string sceneToLoad){
             StopConversation();
-            process = dialogueSystem.StartCoroutine(RunningConversation(conversation));
+            process = dialogueSystem.StartCoroutine(RunningConversation(conversation, sceneToLoad));
         }
         public void StopConversation(){
             if(!isRunning)
@@ -27,7 +29,7 @@ namespace DIALOGUE{
             dialogueSystem.StopCoroutine(process);
             process = null;
         }
-        IEnumerator RunningConversation(List<string> conversation){
+        IEnumerator RunningConversation(List<string> conversation, string sceneToLoad){
             for (int i = 0; i < conversation.Count; i++)
             {
                 if(string.IsNullOrWhiteSpace(conversation[i]))
@@ -37,6 +39,7 @@ namespace DIALOGUE{
                     yield return Line_RunDialogue(line);
                 }
             }
+            SceneManager.LoadScene(sceneToLoad);
         }
         IEnumerator Line_RunDialogue(DialogueLine line){
             if(line.hasSpeaker && line.speaker != "Narator")
@@ -44,7 +47,6 @@ namespace DIALOGUE{
             else    
                 dialogueSystem.HideSpeakerName();
             yield return BuildLineSegments(line.dialogue);
-            yield return WaitForInput();
         }
         IEnumerator BuildDialogue(string dialogue, bool append){
             if(!append)
@@ -66,9 +68,8 @@ namespace DIALOGUE{
             for (int i = 0; i < line.segments.Count; i++)
             {
                 DialogueData.DialogueSegment segment = line.segments[i];
-                yield return WaitForSignalTrigger(segment);
                 yield return BuildDialogue(segment.dialogue, segment.append);
-
+                yield return WaitForSignalTrigger(segment);
             }
         }
         IEnumerator WaitForSignalTrigger(DialogueData.DialogueSegment segment){

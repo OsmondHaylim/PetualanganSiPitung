@@ -6,6 +6,7 @@ namespace DIALOGUE
 {
     public class DialogueSystem : MonoBehaviour
     {
+        public string sceneToLoad; 
         public DialogueContainer dialogueContainer = new DialogueContainer();
         private ConversationManager conversationManager;
         private TextArchitect architect;
@@ -25,15 +26,16 @@ namespace DIALOGUE
             }else
                 DestroyImmediate(gameObject);
             List<string> lines = FileManager.ReadTextAsset(TextAsset);
-            instance.Say(lines);
+            instance.Say(lines, sceneToLoad);
+            
         }
         public void OnUserPrompt_Next(){
             onUserPrompt_Next?.Invoke();
         }
         public void ShowSpeakerName(string speakerName = "") => dialogueContainer.nameContainer.Show(speakerName);
         public void HideSpeakerName() => dialogueContainer.nameContainer.Hide();
-        public void Say(List<string> conversation){
-            conversationManager.StartConversation(conversation);
+        public void Say(List<string> conversation, string sceneToLoad){
+            conversationManager.StartConversation(conversation, sceneToLoad);
         }
     }
 }

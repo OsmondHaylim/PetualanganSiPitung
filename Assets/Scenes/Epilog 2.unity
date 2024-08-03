@@ -371,7 +371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -991,7 +991,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To Level
+  m_text: To Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e49205a7348ab47a47bfb0543e13fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Menu Utama
   dialogueContainer:
     root: {fileID: 1791081360}
     nameContainer:
@@ -2012,7 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d771830d6e312814885f89e6399d7d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Menu Utama
+  sceneToLoad: Level Select
   buttonClickSound: {fileID: 8300000, guid: bd06198d249e1b442b67ebc71b26fa0a, type: 3}
 --- !u!1 &2009743865
 GameObject:

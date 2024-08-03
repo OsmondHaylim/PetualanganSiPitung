@@ -1,2 +1,1 @@
 Narator"Pada suatu hari, terdapat seorang anak yang terlentang di padang rumput.{c} Anak ini pun kemudian terbangun.{a} Ia lalu melihat sekelilingnya sambil merasa bingung.{c} Anak ini kemudian memulai melihat sebuah jalan,{a} dan mengikuti jalan tersebut.{c} Beberapa saat kemudian ia melihat seseorang jauh didepannya berlari menyusuri jalan tersebut. {c} Ia pun mencoba menghampirinya, tetapi ia terlalu cepat untuk dikejar."
-Start(Level1)

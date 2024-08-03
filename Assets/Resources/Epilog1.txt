@@ -4,5 +4,4 @@ Pitung"Aku adalah si Jago di Tanah Abang ini!{a} Kau seharusnya mengaku kalah da
 Haji Sapiudin"Tidak mungkin!{a} Hey, bagaimana kamu bisa kalah dengan orang itu?{a} Aku kira pasukan Heyne seharusnya dapat melindungiku dari perampok seperti dia!"
 Pasukan"Ugh, maaf! Dia terlalu kuat!"
 Pitung"Hahaha. Aku sudah mendapatkan harta yang kuincar. Sekarang waktunya kabur!"
-Narator"Si Pitung pun kemudian berlari meninggalkan pasar tersebut.{c} Anak yang bersembunyi di belakang pohon tersebut ingin mengikuti si Pitung,{a} tetapi si Pitung terlalu cepat untuk dikejar."HideCharacter()
-Load(Menu)
+Narator"Si Pitung pun kemudian berlari meninggalkan pasar tersebut.{c} Anak yang bersembunyi di belakang pohon tersebut ingin mengikuti si Pitung,{a} tetapi si Pitung terlalu cepat untuk dikejar."

@@ -13,17 +13,14 @@ public class FinishLevelDetector : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player"){
-            if (PlayerPrefs.GetInt("Level") >  level){
+            if (PlayerPrefs.GetInt("Level") >  level)
                 PlayerPrefs.SetInt("Level", level);
-            }
             FindObjectOfType<FinishLevelManager>().StartCoroutine("OnLevelCompleted");
         }
     }
-
     void OnTriggerExit (Collider other)
     {
-        if(other.gameObject.tag == "Player"){
+        if(other.gameObject.tag == "Player")
             thisCollider.isTrigger = false;
-        }
     }
 }

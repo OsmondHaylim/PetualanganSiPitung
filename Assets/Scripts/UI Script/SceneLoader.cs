@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
             audioSource.Play();
         }
         StartCoroutine(LoadSceneAfterSound(0.5f));
+        LoadScene();
     }
 
     IEnumerator LoadSceneAfterSound(float delay)
@@ -34,6 +35,7 @@ public class SceneLoader : MonoBehaviour
         // Load the specified scene.
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
+            Time.timeScale = 1f; 
             SceneManager.LoadScene(sceneToLoad);
         }
         else

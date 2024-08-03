@@ -30,11 +30,9 @@ public class FinishLevelManager : MonoBehaviour
             finishLevelNotification.transform.position = Vector3.Lerp(finishLevelNotification.transform.position, finishLevelDisplayPosition.transform.position, t);
             yield return new WaitForEndOfFrame();
         }
-
         step = 1.5f * Time.fixedDeltaTime;
         Vector2 prevSize = new Vector2(5, 100);
         Vector2 newSize = new Vector2(400, 100);
-
         for (float t = 0; t <= 1.0f; t += step) {
             finishLevelNotification.sizeDelta = Vector2.Lerp(prevSize, newSize, t);
             finishLevelText.sizeDelta = Vector2.Lerp(prevSize, newSize, t);
@@ -54,7 +52,9 @@ public class FinishLevelManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         Cursor.lockState = CursorLockMode.None;
-        PlayerPrefs.SetInt("Level", level);
+        if (PlayerPrefs.GetInt("Level") < level){
+            PlayerPrefs.SetInt("Level", level);
+        }
         if (PlayerPrefs.GetInt(key) < gameManager.currentWine){
             PlayerPrefs.SetInt(key, gameManager.currentWine);
         }

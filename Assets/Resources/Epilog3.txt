@@ -7,4 +7,3 @@ Pasukan"Hahaha! Kau tidak seharusnya melawan kami!"
 Narator"Pasukan tersebut kemudian membawa Pitung ke markas mereka. Salah satu dari pasukan tersebut menemukan anak yang bersembunyi di semak-semak"
 Pasukan"Siapa kamu? Kamu pasti adalah teman Si Pitung. Mati kau!"
 Narator"Setelah melihat pasukan tersebut menyerangnya, anak tersebut kemudian terbangun dari mimpinya. Anak tersebut akan selalu mengingat mimpi yang dia rasakan"
-Load(Menu)

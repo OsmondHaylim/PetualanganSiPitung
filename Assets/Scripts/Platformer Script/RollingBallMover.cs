@@ -15,7 +15,6 @@ public class RollingBallMover : MonoBehaviour
         {
             transform.position = startPoint.transform.position;
         }
-
         transform.position = Vector3.MoveTowards(transform.position, endPoint.transform.position, speed * Time.deltaTime);
         transform.Rotate(new Vector3(0, speed * 0.5f, 0)); 
     }

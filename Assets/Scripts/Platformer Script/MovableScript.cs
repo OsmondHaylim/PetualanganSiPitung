@@ -6,26 +6,23 @@ using System;
 public class MovableScript : MonoBehaviour
 {
     public float pushForce;
-    public CharacterController cc;
     public float gForce;
     public float counteractingForceMultiplier;
-    public float drag;
     public Vector3 pushDirection;
     public Vector3 actualDirection;
-    public Vector3 gravity;
     private bool isPushed = false;
     Rigidbody rb;
-
     private void Start(){
         rb = GetComponent<Rigidbody>();
-        rb.drag = drag;
+        if (rb == null)
+            rb = gameObject.AddComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
-
     private void OnCollisionEnter(Collision hitter){
         if(hitter.gameObject.CompareTag("Player")){
-            isPushed = true;
-            pushDirection = transform.position - hitter.transform.position;
-            pushDirection.Normalize();
+            pushDirection = transform.position - hitter.contacts[0].point;
+            // pushDirection.Normalize();
             if (Math.Abs(pushDirection.x) > Math.Abs(pushDirection.z)){
                 actualDirection = new Vector3(pushDirection.x, 0, 0);
                 if ((rb.constraints & RigidbodyConstraints.FreezePositionX) != 0){
@@ -40,14 +37,13 @@ public class MovableScript : MonoBehaviour
                 rb.constraints |= RigidbodyConstraints.FreezePositionX;
             }
             actualDirection.y += Physics.gravity.y * gForce * Time.deltaTime;
-            rb.AddForce(actualDirection * pushForce, ForceMode.VelocityChange);
+            rb.AddForce(actualDirection * pushForce, ForceMode.Impulse);
         }
         if (hitter.gameObject.CompareTag("Boxes")){
             rb.constraints |= RigidbodyConstraints.FreezePositionX;
             rb.constraints |= RigidbodyConstraints.FreezePositionZ;
         }
     }
-
     void Update(){
         if (!isPushed){
             if ((rb.constraints & RigidbodyConstraints.FreezePositionX) != 0){
@@ -58,13 +54,6 @@ public class MovableScript : MonoBehaviour
             }
         }
     }
-
-    void LateUpdate(){
-        gravity = new Vector3(0,0,0);
-        gravity.y += Physics.gravity.y * gForce * Time.deltaTime;
-        rb.AddForce(gravity * gForce * Time.deltaTime, ForceMode.Acceleration);
-    }
-
     void FixedUpdate(){
         if (!isPushed){
             Vector3 counteractingForce = -rb.velocity * counteractingForceMultiplier;
@@ -75,8 +64,7 @@ public class MovableScript : MonoBehaviour
             if ((rb.constraints & RigidbodyConstraints.FreezePositionZ) != 0){
                 rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
             }
-            
-            
         }
+        rb.AddForce(Vector3.down * Physics.gravity.y * -(gForce) * rb.mass);
     }
 }

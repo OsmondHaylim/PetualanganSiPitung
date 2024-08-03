@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public string MenuUtama;
     public int currentWine;
     public int currentHealth;
     public int maxHealth;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
         if (startAtMaxHealth){
             currentHealth = maxHealth;
         }
-        healthText.text = "Health : " + currentHealth + "/" + maxHealth;
+        healthText.text = "Darah : " + currentHealth + "/" + maxHealth;
         if(respawner == null){
             respawnPoint = monitoredPlayer.transform.position;
         }else{
@@ -64,12 +65,10 @@ public class GameManager : MonoBehaviour
         if(invicibilityCounter > 0){
             invicibilityCounter -= Time.deltaTime;
             flashCounter -= Time.deltaTime;
-
             if(flashCounter <= 0){
                 playerRenderer.enabled = !playerRenderer.enabled;
                 flashCounter = flashTime;
             }
-
             if(invicibilityCounter <= 0){
                 playerRenderer.enabled = true;
             }
@@ -80,29 +79,24 @@ public class GameManager : MonoBehaviour
             }else{
                 currentHealth -= fallDamage;
             }
-            
-            healthText.text = "Health : " + currentHealth + "/" + maxHealth;
-             
+            healthText.text = "Darah : " + currentHealth + "/" + maxHealth;
             playerRenderer.enabled = false;
             flashCounter = flashTime;
             Respawn();
             invicibilityCounter = respawnTime + 1; 
         }
-        
         if(emerge){
             blackScreen.color =  new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
             if(blackScreen.color.a == 1f){
                 emerge = false;
             }
         }
-
         if(fade){
             blackScreen.color =  new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b, Mathf.MoveTowards(blackScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
             if(blackScreen.color.a == 0f){
                 fade = false;
             }
         }
-
         if(Input.GetKeyDown(KeyCode.Escape)){
             Pause();
         }
@@ -110,54 +104,42 @@ public class GameManager : MonoBehaviour
 
     public void AddMore(int wineAmount){
         currentWine += wineAmount;
-        wineText.text = "Wine : " + currentWine;
+        wineText.text = "Bir : " + currentWine;
     }
     public void HurtPlayer(int damageGiven, float timeKnocked, float force, Vector3 direction){
         if(invicibilityCounter <= 0){
             currentHealth -= damageGiven;
-            healthText.text = "Health : " + currentHealth + "/" + maxHealth;
+            healthText.text = "Darah : " + currentHealth + "/" + maxHealth;
             if(currentHealth <= 0){
                 Respawn();
             }else{
                 monitoredPlayer.anim.SetTrigger("Hurt");
                 monitoredPlayer.KnockBack(timeKnocked, direction, force);
                 invicibilityCounter = invicibilityTime;
-                
                 playerRenderer.enabled = false;
                 flashCounter = flashTime;
-                
             }
-            
         }
     }
-
-    public void HealPlayer(int heal){
-        currentHealth += heal;
-        if (currentHealth > maxHealth){
-            currentHealth = maxHealth;
-            healthText.text = "Health : " + currentHealth + "/" + maxHealth;
-        }
-    }
-
+    // public void HealPlayer(int heal){
+    //     currentHealth += heal;
+    //     if (currentHealth > maxHealth){
+    //         currentHealth = maxHealth;
+    //         healthText.text = "Darah : " + currentHealth + "/" + maxHealth;
+    //     }
+    // }
     public void Respawn(){
         if(!isRespawning){
             StartCoroutine("RespawnCo");
         }
     }
-
     public void Restart(){
         Time.timeScale = 1f; 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    public void Death(){
-        Cursor.lockState = CursorLockMode.None;
-        originalTimeScale = Time.timeScale;
-        Time.timeScale = 0f;
-        DeathMenu.SetActive(true);
-        if (cameraController != null){
-            cameraController.enabled = false;
-        }
+    public void BackToMenu(){
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(MenuUtama);
     }
     public void Pause(){
         isPaused = !isPaused;
@@ -178,7 +160,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public IEnumerator RespawnCo(){
         isRespawning = true;
         if(monitoredPlayer.controller.transform.position.y > yLimit){
@@ -207,21 +188,16 @@ public class GameManager : MonoBehaviour
         }else{
             emerge = false;
             fade = true;
-            
             isRespawning = false;
-
             monitoredPlayer.controller.enabled = false;
             monitoredPlayer.transform.position = respawnPoint;
             monitoredPlayer.controller.enabled = true;
-            currentHealth = maxHealth;
-            healthText.text = "Health : " + currentHealth + "/" + maxHealth;
+            healthText.text = "Darah : " + currentHealth + "/" + maxHealth;
             monitoredPlayer.gameObject.SetActive(true);
 
             invicibilityCounter = invicibilityTime;
             playerRenderer.enabled = false;
             flashCounter = flashTime;
         }
-        
-        
     }
 }

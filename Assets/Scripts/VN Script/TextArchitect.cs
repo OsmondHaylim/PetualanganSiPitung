@@ -12,9 +12,6 @@ namespace DIALOGUE{
         public string targetText {get; private set; } = "";
         public string preText {get; private set; } = "";
         public string fullTargetText => preText + targetText;
-        public enum BuildMethod {instant, typewriter};
-        public BuildMethod buildMethod =   BuildMethod.typewriter;
-        public Color textColor { get { return tmpro.color; } set{ tmpro.color = value; }}
         public float speed { get { return baseSpeed * speedMultiplier;} set { speedMultiplier = value;}}
         private const float baseSpeed = 1;
         private float speedMultiplier = 1;
@@ -51,45 +48,24 @@ namespace DIALOGUE{
             buildProcess = null;
         }
         IEnumerator Building(){
-            Prepare();
+            Prepare_Typewriter();
             yield return Build_Typewriter();
         }
-
         private void OnComplete(){
             buildProcess = null;
             hurry = false;
         }
-
         public void ForceComplete(){
-            tmpro.maxVisibleCharacters = tmpro.textInfo.characterCount;
-        }
-
-        private void Prepare(){
-            switch(buildMethod){
-                case BuildMethod.instant:
-                    Prepare_Instant();
-                    break;
-                case BuildMethod.typewriter:
-                    Prepare_Typewriter();
-                    break;
-            }
-        }
-        private void Prepare_Instant(){
-            tmpro.color = tmpro.color;
-            tmpro.text = fullTargetText;
-            tmpro.ForceMeshUpdate();
             tmpro.maxVisibleCharacters = tmpro.textInfo.characterCount;
         }
         private void Prepare_Typewriter(){
             tmpro.color = tmpro.color;
             tmpro.maxVisibleCharacters = 0;
             tmpro.text = preText;
-
             if(preText != ""){
                 tmpro.ForceMeshUpdate();
                 tmpro.maxVisibleCharacters = tmpro.textInfo.characterCount;
             }
-
             tmpro.text += targetText;
             tmpro.ForceMeshUpdate();
         }

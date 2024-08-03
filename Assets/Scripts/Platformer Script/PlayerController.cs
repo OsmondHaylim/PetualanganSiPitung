@@ -12,14 +12,14 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Transform pivot;
     public GameObject model;
-    // Rigidbody rb;
 
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     private float knockBackTimeCounter;
     
     void Start(){
         controller = GetComponent<CharacterController>();
-        // rb = GetComponent<Rigidbody>();
+        if (controller == null)
+            controller = gameObject.AddComponent<CharacterController>();
     }
 
     
